@@ -50,7 +50,7 @@ app.post('/search',async(req,res)=>{
 
 app.post('/edit',async(req,res)=>{
     try{
-        var result=await librarymodel.findOneAndUpdate({"_id":req.body._id})
+        var result=await librarymodel.findOneAndUpdate({"_id":req.body._id},req.body)
         res.json(result)
     }
     catch(error){
